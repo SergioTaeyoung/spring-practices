@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HelloController {
-
+	
 	@RequestMapping("/hello")
 	public String hello() {
 		return "/WEB-INF/views/hello.jsp";
@@ -21,17 +21,19 @@ public class HelloController {
 	
 	@RequestMapping("/hello3")
 	public ModelAndView hello3(String name) {
+		
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("name", name);
 		mav.setViewName("/WEB-INF/views/hello3.jsp");
+		
 		return mav;
 	}
 	
-	//추 천 방 법 ! !
 	@RequestMapping("/hello4")
 	public String hello4(String name, Model model) {
-		
 		model.addAttribute("name", name);
 		return "/WEB-INF/views/hello4.jsp";
 	}
+	
+	
 }
